@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Impact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+    .form-container h2 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Social Media Impact Survey</h2>
+    <form id="surveyForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="number">Phone Number</label>
+        <input type="tel" id="number" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" required />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="usage">Daily Social Media Usage (in hours)</label>
+        <input type="text" id="usage" required />
+      </div>
+      <div class="form-group">
+        <label for="impact">What impact has social media had on you?</label>
+        <textarea id="impact" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="additional">Any additional comments?</label>
+        <textarea id="additional" rows="3"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('surveyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>
