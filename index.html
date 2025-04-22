@@ -103,6 +103,40 @@
       e.preventDefault();
       alert('Form submitted successfully!');
     });
+    document.getElementById('surveyForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      number: document.getElementById('number').value,
+      email: document.getElementById('email').value,
+      age: document.getElementById('age').value,
+      gender: document.getElementById('gender').value,
+      usage: document.getElementById('usage').value,
+      impact: document.getElementById('impact').value,
+      additional: document.getElementById('additional').value,
+    };
+
+    try {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbweVcISW9kLvQUHMVeUB6iw_HJboBjggbDYK0BL6dwdZVNi_M6w6Iq3X7y_rW6Wmpqg/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (res.ok) {
+        alert('Form submitted and saved to Google Sheet!');
+        this.reset();
+      } else {
+        alert('Submission failed.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error connecting to Google Sheet.');
+    }
+  });
   </script>
 </body>
 </html>
